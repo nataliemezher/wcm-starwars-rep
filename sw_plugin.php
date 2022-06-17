@@ -21,5 +21,13 @@ function sw_deactivation_run()
 }
 
 //require klass filerna för att kunna nå dom här
-require plugin_dir_path(__FILE__ . 'inc/class_starwars.php');
-require plugin_dir_path(__FILE__ . 'inc/class_sw_posttypes.php');
+require plugin_dir_path(__FILE__) . 'inc/class_starwars.php';
+require plugin_dir_path(__FILE__) . 'inc/class_sw_posttypes.php';
+
+
+function runSW()
+{
+    new StarWars();
+    new SW_Post_Types();
+}
+runSW();
