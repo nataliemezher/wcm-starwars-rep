@@ -32,7 +32,6 @@ class SW_Post_Types
                 'title',
                 'custom-fields',
                 'thumbnail',
-                'custom-fields',
             ]
 
         ]);
@@ -52,7 +51,6 @@ class SW_Post_Types
                 'title',
                 'custom-fields',
                 'thumbnail',
-                'custom-fields',
             ]
 
         ]);

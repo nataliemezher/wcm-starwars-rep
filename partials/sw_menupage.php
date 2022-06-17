@@ -9,7 +9,7 @@
             <form class="sw-import" action="<?php echo admin_url('admin-ajax.php') ?>" method="post">
                 <?php wp_nonce_field('sw-nonce', 'nonce'); ?>
                 <input type="hidden" name="url" value="<?php echo $film->url; ?>">
-                <input type="hidden" name="action" value="sw-handle-form">
+                <input type="hidden" name="action" value="sw_handle_form">
                 <button type="submit">Importera</button>
 
             </form>
