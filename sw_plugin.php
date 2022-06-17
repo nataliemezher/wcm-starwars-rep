@@ -4,6 +4,9 @@
  * Plugin Name: Star Wars Plugin
  * Description: A plugin for Star Wars Characters
  * Author: Natalie M
+ * Text Domain: Wcm-Star-wars
+ * Domain Path: /languages
+ * Version: 1.0.0
  * 
  */
 
@@ -27,7 +30,7 @@ require plugin_dir_path(__FILE__) . 'inc/class_sw_posttypes.php';
 
 function runSW()
 {
-    new StarWars();
     new SW_Post_Types();
+    new StarWarsF();
 }
 runSW();
