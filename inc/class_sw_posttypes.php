@@ -23,7 +23,7 @@ class SW_Post_Types
 
         register_post_type('sw_character', [
             'labels' => [
-                'name' => 'Characters',
+                'name' => 'Characters', //namn i menyn
                 'singular' => 'Character',
 
             ],

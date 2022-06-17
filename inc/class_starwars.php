@@ -90,10 +90,30 @@ class StarWarsF
                 'episode_id' => $film->episode_id,
                 'producer' => $film->producer,
                 'release_date' =>  $film->release_date,
+                'url' => $film->url,
             ]
         ]);
+        $apicallChar = wp_remote_get($_POST['url']);
+        $character = json_decode(wp_remote_retrieve_body($apicallChar));
+        $existingCharPost = post_exists($character->name);
 
-        if (!is_wp_error($newPost)) {
+        $newCharPost = wp_insert_post([
+            'ID' => $existingCharPost,
+            'post_title' => $character->name,
+            'post_type' => 'sw_character',
+            'meta_input' => [
+                'birthdate' => $character->birth_year,
+                'eye_color' => $character->eye_color,
+                'hair_color' => $character->hair_color,
+                'height' => $character->height,
+                'homeworld' => $character->homeworld,
+                'films' => $character->films,
+                'url' => $character->url
+            ]
+
+        ]);
+
+        if (!is_wp_error($newPost, $newCharPost)) {
             wp_send_json_success([
                 'status' => 'success',
                 'message' => 'Starwars film har lagts till',
